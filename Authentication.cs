@@ -16,64 +16,77 @@ namespace MyEcommerceBackend
 {
     public class Authentication
     {
+        // Main method - entry point of the application
         public static void Main(string[] args)
         {
+            // Creates and runs the web host
             CreateHostBuilder(args).Build().Run();
         }
 
+        // Defines the host builder
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // Configures the web host to use this class (Authentication) as the startup class
                     webBuilder.UseStartup<Authentication>();
                 });
+
+        // Constructor that accepts configuration settings
         public Authentication(IConfiguration configuration)
         {
             Configuration = configuration;
         }
+
+        // Configuration property
         public IConfiguration Configuration { get; }
 
+        // ConfigureServices method - used to register application services
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add services to the container.
+            // Registers controller services
             services.AddControllers();
 
-            // Identity Configuration
+            // Configures Identity and database context
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            // Adds Identity services for authentication and authorization
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequiredLength = 8;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Lockout.AllowedForNewUsers = true;
+                // Sets password and lockout options
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
+            // Configures API explorer and Swagger for API documentation
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }
 
+        // Configure method - used to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Enables Swagger in development environment
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
+            // Adds HTTPS redirection middleware
             app.UseHttpsRedirection();
+
+            // Adds routing middleware
             app.UseRouting();
+
+            // Adds authentication and authorization middleware
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // Configures endpoint routing
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

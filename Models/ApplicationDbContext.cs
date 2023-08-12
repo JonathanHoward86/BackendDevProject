@@ -9,6 +9,7 @@ namespace MyEcommerceBackend.Models
             : base(options)
         {
         }
-
+        // This class manages the Entity Framework Core functionality for Identity,
+        // including defining the DB context for the user tables.
     }
 }
