@@ -10,6 +10,5 @@ namespace MyEcommerceBackend.Models
         {
         }
 
-        // other code
     }
 }

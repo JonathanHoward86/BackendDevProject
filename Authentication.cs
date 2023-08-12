@@ -25,7 +25,7 @@ namespace MyEcommerceBackend
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Authentication>(); // Use your Authentication class as the startup
+                    webBuilder.UseStartup<Authentication>();
                 });
         public Authentication(IConfiguration configuration)
         {
