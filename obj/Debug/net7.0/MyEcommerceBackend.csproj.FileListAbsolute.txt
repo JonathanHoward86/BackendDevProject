@@ -1,0 +1,9 @@
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.csproj.AssemblyReference.cache
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.AssemblyInfoInputs.cache
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.AssemblyInfo.cs
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.csproj.CoreCompileInputs.cache
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.RazorAssemblyInfo.cache
+C:\Coding\BackendDevProject\MyEcommerceBackend\obj\Debug\net7.0\MyEcommerceBackend.RazorAssemblyInfo.cs
