@@ -1,11 +1,18 @@
-using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyEcommerceBackend.Models
 {
     public class RegisterModel // Model for user registration.
     {
-        public string? Email { get; set; } // Optional email property.
-        public string? Password { get; set; } // Optional password property.
-        public string? ConfirmPassword { get; set; } // Optional confirm password property.
+        [Required]
+        [EmailAddress]
+        public string? Email { get; set; } // Required email property.
+
+        [Required]
+        [MinLength(6)] // Minimum length for a password, change as needed.
+        public string? Password { get; set; } // Required password property.
+
+        [Compare("Password")] // Ensures this matches the password field.
+        public string? ConfirmPassword { get; set; } // Required confirm password property.
     }
 }

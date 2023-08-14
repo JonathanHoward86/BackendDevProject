@@ -44,6 +44,19 @@ namespace MyEcommerceBackend
         // ConfigureServices method - used to register application services
         public void ConfigureServices(IServiceCollection services)
         {
+            // Read the environment variables from Azure
+            string server = Configuration["DBServer"] ?? throw new Exception("Server environment variable is not set.");
+            string database = Configuration["DB"] ?? throw new Exception("Database environment variable is not set.");
+            string username = Configuration["DBLogin"] ?? throw new Exception("Username environment variable is not set.");
+            string password = Configuration["DBPW"] ?? throw new Exception("Password environment variable is not set.");
+
+            // Construct the connection string
+            string connectionString = $"Server=tcp:{server},1433;Initial Catalog={database};Persist Security Info=False;User ID={username};Password={password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+            // Add the DbContext using the connection string
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
             // Registers controller services
             services.AddControllers();
 
