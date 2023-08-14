@@ -38,9 +38,8 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(238bd2e9-c0c4-4f2e-ad95-3cb2d79eedfa)'
     appType: 'webApp'
-    appName: 'LearnDevelopmentAuthentication'
+    webAppName: $(webappName)
     deployToSlotOrASE: true
     resourceGroupName: 'DefaultResourceGroup-CUS'
     slotName: 'production'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    deploymentMethod: 'manual'
