@@ -47,6 +47,9 @@ namespace MyEcommerceBackend
             // Registers controller services
             services.AddControllers();
 
+            // Add MVC support with Views and Controllers
+            services.AddControllersWithViews();
+
             // Configures Identity and database context
             services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -54,7 +57,7 @@ namespace MyEcommerceBackend
             });
 
             // Adds Identity services for authentication and authorization
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 // Sets password and lockout options
             })
@@ -64,6 +67,7 @@ namespace MyEcommerceBackend
             // Configures API explorer and Swagger for API documentation
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+
         }
 
         // Configure method - used to configure the HTTP request pipeline
@@ -76,9 +80,6 @@ namespace MyEcommerceBackend
                 app.UseSwaggerUI();
             }
 
-            // Adds HTTPS redirection middleware
-            app.UseHttpsRedirection();
-
             // Adds routing middleware
             app.UseRouting();
 
@@ -86,11 +87,17 @@ namespace MyEcommerceBackend
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Configures endpoint routing
+            app.UseStaticFiles(); // Serve static files like CSS, JavaScript, etc.
+
+            // Enable endpoint routing and configure the default route
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=View}/{action=Login}/{id?}");
                 endpoints.MapControllers();
             });
         }
+
     }
 }
