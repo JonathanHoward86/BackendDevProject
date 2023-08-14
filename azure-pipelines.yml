@@ -43,4 +43,4 @@ steps:
     resourceGroupName: 'DefaultResourceGroup-CUS'
     slotName: 'production'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
+    deploymentMethod: 'manual'
