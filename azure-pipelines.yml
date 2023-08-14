@@ -1,0 +1,45 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  projectName: 'MyEcommerceBackend'
+  webAppName: 'LearnDevelopmentAuthentication'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(238bd2e9-c0c4-4f2e-ad95-3cb2d79eedfa)'
+    appType: 'webApp'
+    webAppName: $(webappName)
+    deployToSlotOrASE: true
+    resourceGroupName: 'DefaultResourceGroup-CUS'
+    slotName: 'production'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
