@@ -2,11 +2,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MyEcommerceBackend.Models
 {
-    public class RegisterModel
+    public class RegisterModel // Model for user registration.
     {
-        public string? Email { get; set; }
-        public string? Password { get; set; }
-        public string? ConfirmPassword { get; set; }
-
+        public string? Email { get; set; } // Optional email property.
+        public string? Password { get; set; } // Optional password property.
+        public string? ConfirmPassword { get; set; } // Optional confirm password property.
     }
 }

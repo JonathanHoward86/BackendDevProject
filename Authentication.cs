@@ -53,7 +53,7 @@ namespace MyEcommerceBackend
             // Configures Identity and database context
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")); // Connects to the database using a connection string
             });
 
             // Adds Identity services for authentication and authorization
@@ -67,17 +67,16 @@ namespace MyEcommerceBackend
             // Configures API explorer and Swagger for API documentation
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-
         }
 
         // Configure method - used to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Enables Swagger in development environment
+            // Enables Swagger in the development environment
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(); // Enables Swagger UI for API documentation browsing
             }
 
             // Adds routing middleware
@@ -94,10 +93,9 @@ namespace MyEcommerceBackend
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=View}/{action=Login}/{id?}");
+                    pattern: "{controller=View}/{action=Login}/{id?}"); // Defines the default route
                 endpoints.MapControllers();
             });
         }
-
     }
 }

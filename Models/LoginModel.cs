@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MyEcommerceBackend.Models
 {
-    public class LoginModel
+    public class LoginModel // Model for user login.
     {
-        public string? Email { get; set; }
-        public string? Password { get; set; }
+        public string? Email { get; set; } // Optional email property.
+        public string? Password { get; set; } // Optional password property.
     }
 }

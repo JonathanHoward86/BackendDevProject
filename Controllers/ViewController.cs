@@ -2,34 +2,39 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyEcommerceBackend.Models;
 
-public class ViewController : Controller
+public class ViewController : Controller // Controller for handling user-facing views like Register, Login, etc.
 {
     public IActionResult Register()
     {
-        return View();
+        return View(); // Returns the Register view.
     }
 
     [HttpPost]
-    public IActionResult Register(RegisterModel model) // Removed 'async' and 'Task'
+    public IActionResult Register(RegisterModel model)
     {
-        // Logic to call the AccountController's Register endpoint
-        // and process the response can go here. You might use
-        // client-side scripting (JavaScript) to handle form submission.
-
-        return View(model);
+        return View(model); // Returns the Register view along with the model data.
     }
 
     public IActionResult Login()
     {
-        return View();
+        return View(); // Returns the Login view.
     }
 
     [HttpPost]
-    public IActionResult Login(LoginModel model) // Removed 'async' and 'Task'
+    public IActionResult Login(LoginModel model)
     {
-        // Logic to call the AccountController's Login endpoint
-        // and process the response can go here.
+        return View(model); // Returns the Login view along with the model data.
+    }
 
-        return View(model);
+    [HttpPost]
+    public IActionResult ResetPassword(ResetPasswordModel model)
+    {
+        return View(model); // Returns the ResetPassword view along with the model data.
+    }
+
+    [HttpPost]
+    public IActionResult ForgotUsername(ForgotUsernameModel model)
+    {
+        return View(model); // Returns the ForgotUsername view along with the model data.
     }
 }
