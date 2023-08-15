@@ -5,15 +5,15 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<form method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required />
+<form method="post" action="/api/Account/Register">
+    <label for="Email">Email:</label>
+    <input type="text" id="Email" name="Email" required />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required />
+    <label for="Password">Password:</label>
+    <input type="password" id="Password" name="Password" required />
 
-    <label for="confirmpassword">ConfirmPassword</label>
-    <input type="password" id="confirmpassword" name="confirmpassword" required />
+    <label for="ConfirmPassword">ConfirmPassword:</label>
+    <input type="password" id="ConfirmPassword" name="ConfirmPassword" required />
 
     <button type="submit">Register</button>
 </form>

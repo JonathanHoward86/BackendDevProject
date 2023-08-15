@@ -63,12 +63,6 @@ namespace MyEcommerceBackend
             // Add MVC support with Views and Controllers
             services.AddControllersWithViews();
 
-            // Configures Identity and database context
-            services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")); // Connects to the database using a connection string
-            });
-
             // Adds Identity services for authentication and authorization
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
