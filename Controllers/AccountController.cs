@@ -20,7 +20,7 @@ namespace MyEcommerceBackend.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(RegisterModel model) // Register endpoint to create a new user account.
+        public async Task<IActionResult> Register([FromForm] RegisterModel model) // Register endpoint to create a new user account.
         {
             if (ModelState.IsValid) // Validates the model.
             {
@@ -48,7 +48,7 @@ namespace MyEcommerceBackend.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginModel model) // Login endpoint to authenticate an existing user.
+        public async Task<IActionResult> Login([FromForm] LoginModel model) // Login endpoint to authenticate an existing user.
         {
             if (model.Email != null && model.Password != null) // Checks if Email and Password are provided.
             {
