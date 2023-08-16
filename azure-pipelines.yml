@@ -7,7 +7,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   projectName: 'MyEcommerceBackend'
-  webAppName: 'LearnDevelopmentAuthentication'
+  webAppName: 'LearnHowToDev'
 
 steps:
 - task: DotNetCoreCLI@2
