@@ -59,4 +59,4 @@ Adjust minimum password length and other validation rules in the RegisterModel c
 
 Acknowledgments
 
-The automated test scripts in this repository were created by Jonathan Howard, an aspiring software developer with expertise in Agile Software Development and proficiency in various programming languages.
+The code in this repository were created with a little help from Chat GPT by Jonathan Howard, an aspiring software developer with expertise in Agile Software Development and proficiency in various programming languages.
