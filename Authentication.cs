@@ -66,7 +66,6 @@ namespace MyEcommerceBackend
             // Adds Identity services for authentication and authorization
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
-                // Sets password and lockout options
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();

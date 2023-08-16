@@ -1,16 +1,30 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 
 namespace MyEcommerceBackend.Models
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        private readonly IConfiguration _configuration;
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration configuration)
             : base(options)
         {
+            _configuration = configuration;
         }
-        // This class manages the Entity Framework Core functionality for Identity,
-        // including defining the DB context for the user tables.
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                string server = _configuration["DBServer"] ?? "localhost";
+                string database = _configuration["DB"] ?? "MyDatabase";
+                string username = _configuration["DBLogin"] ?? "username";
+                string password = _configuration["DBPW"] ?? "password";
+
+                optionsBuilder.UseSqlServer($"Server={server};Database={database};User Id={username};Password={password};");
+            }
+        }
     }
 }
