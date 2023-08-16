@@ -56,3 +56,7 @@ Configuration:
 
 Configure the database connection string in the Authentication class constructor.
 Adjust minimum password length and other validation rules in the RegisterModel class.
+
+Acknowledgments
+
+The automated test scripts in this repository were created by Jonathan Howard, an aspiring software developer with expertise in Agile Software Development and proficiency in various programming languages.
