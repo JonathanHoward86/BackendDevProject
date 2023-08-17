@@ -33,15 +33,11 @@ namespace MyEcommerceBackend.Controllers
                         await _signInManager.SignInAsync(user, false);
                         return RedirectToAction("RegisterSuccess", "View"); // Redirect to RegisterSuccess view
                     }
-                    if (result.Succeeded) // If the creation is successful, signs in the user.
-                    {
-                        await _signInManager.SignInAsync(user, false);
-                        return Ok();
-                    }
                     foreach (var error in result.Errors) // Adds errors to ModelState if creation fails.
                     {
                         ModelState.AddModelError("", error.Description);
                     }
+
                 }
                 else
                 {
