@@ -14,17 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Node.js 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
       - uses: actions/checkout@v2
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '7.x'
+          include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
