@@ -15,6 +15,11 @@ public class ViewController : Controller // Controller for handling user-facing 
         return View(model); // Returns the Register view along with the model data.
     }
 
+        public IActionResult RegisterSuccess()
+    {
+        return View(); // Returns the RegisterSuccess view.
+    }
+
     public IActionResult Login()
     {
         return View(); // Returns the Login view.
@@ -24,6 +29,11 @@ public class ViewController : Controller // Controller for handling user-facing 
     public IActionResult Login(LoginModel model)
     {
         return View(model); // Returns the Login view along with the model data.
+    }
+
+        public IActionResult LoginSuccess()
+    {
+        return View(); // Returns the LoginSuccess view.
     }
 
     [HttpPost]

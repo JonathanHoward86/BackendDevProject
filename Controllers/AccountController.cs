@@ -28,6 +28,11 @@ namespace MyEcommerceBackend.Controllers
                     var user = new IdentityUser { UserName = model.Email, Email = model.Email }; // Creates a new user object.
                     var result = await _userManager.CreateAsync(user, model.Password); // Attempts to create a new user.
 
+                    if (result.Succeeded)
+                    {
+                        await _signInManager.SignInAsync(user, false);
+                        return RedirectToAction("RegisterSuccess", "View"); // Redirect to RegisterSuccess view
+                    }
                     if (result.Succeeded) // If the creation is successful, signs in the user.
                     {
                         await _signInManager.SignInAsync(user, false);
@@ -56,6 +61,10 @@ namespace MyEcommerceBackend.Controllers
                 {
                     var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
 
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("LoginSuccess", "View"); // Redirect to LoginSuccess view
+                    }
                     if (result.Succeeded) // If sign-in is successful, returns Ok response.
                     {
                         return Ok();
