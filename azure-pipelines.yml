@@ -10,36 +10,27 @@ variables:
   webAppName: 'LearnHowToDev'
 
 steps:
-- task: UseDotNet@2
+- task: DotNetCoreCLI@2
   inputs:
-    packageType: 'sdk'
-    version: '7.x'
-    installationPath: $(Agent.ToolsDirectory)/dotnet
+    command: 'restore'
+    projects: '**/*.csproj'
 
-- script: dotnet restore
-  displayName: 'Restore'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build'
-
-- script: dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/publish
-  displayName: 'Publish'
-
-- powershell: |
-    git clone https://github.com/JonathanHoward86/BackendDevProject.git temp
-    $filesToMove = Get-ChildItem -Path temp -File
-    foreach ($file in $filesToMove) {
-        $targetPath = Join-Path -Path $(System.DefaultWorkingDirectory) -ChildPath $file.Name
-        Move-Item -Path $file.FullName -Destination $targetPath -Force
-    }
-    Remove-Item -Path temp -Recurse -Force
-  displayName: 'Pull code from GitHub'
-  env:
-    GITHUB_TOKEN: $(githubPat)
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/publish'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'drop'
 
 - task: AzureRmWebAppDeployment@4
@@ -47,8 +38,8 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(238bd2e9-c0c4-4f2e-ad95-3cb2d79eedfa)'
     appType: 'webApp'
-    webAppName: $(webAppName)
+    webAppName: $(webappName)
     deployToSlotOrASE: true
     resourceGroupName: 'DefaultResourceGroup-CUS'
     slotName: 'production'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/publish'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
