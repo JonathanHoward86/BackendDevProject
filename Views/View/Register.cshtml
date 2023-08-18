@@ -24,17 +24,15 @@ $(document).ready(function () {
     $('form').submit(function (e) {
         e.preventDefault();
         $.post("/api/Account/Register", $(this).serialize(), function (data) {
-                console.log(data);
-                if (data.success) {
-                    window.location.href = data.RedirectUrl;
-                } else {
-                    // Handle success but not redirection here
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                // Handle error here, e.g., show an error message
-                console.error(textStatus, errorThrown);
+            console.log(data);
+            if (data.success) {
+                window.location.href = data.RedirectUrl;
+            } else {
+                // Handle success but not redirection here
             }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            // Handle error here, e.g., show an error message
+            console.error(textStatus, errorThrown);
         });
     });
 });
