@@ -75,3 +75,7 @@ build_metadata.AdditionalFiles.CssScope =
 [c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/ResetPasswordView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
