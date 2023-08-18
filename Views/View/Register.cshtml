@@ -17,3 +17,19 @@
 
     <button type="submit">Register</button>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (e) {
+            e.preventDefault();
+            $.post("/api/Account/Register", $(this).serialize(), function (data) {
+                if (data.Success) {
+                    window.location.href = data.RedirectUrl;
+                } else {
+                    // Handle error here, e.g., show an error message.
+                }
+            });
+        });
+    });
+</script>

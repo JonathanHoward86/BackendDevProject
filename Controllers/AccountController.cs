@@ -31,8 +31,9 @@ namespace MyEcommerceBackend.Controllers
                     if (result.Succeeded)
                     {
                         await _signInManager.SignInAsync(user, false);
-                        return RedirectToAction("RegisterSuccess", "View"); // Redirect to RegisterSuccess view
+                        return Ok(new { Success = true, RedirectUrl = "/View/RegisterSuccess" });
                     }
+
                     foreach (var error in result.Errors) // Adds errors to ModelState if creation fails.
                     {
                         ModelState.AddModelError("", error.Description);
@@ -59,12 +60,10 @@ namespace MyEcommerceBackend.Controllers
 
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("LoginSuccess", "View"); // Redirect to LoginSuccess view
+                        return Ok(new { Success = true, RedirectUrl = "/View/LoginSuccess" });
                     }
-                    if (result.Succeeded) // If sign-in is successful, returns Ok response.
-                    {
-                        return Ok();
-                    }
+
+
                 }
                 ModelState.AddModelError("", "Invalid login attempt"); // Error message for an invalid login attempt.
             }
