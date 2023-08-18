@@ -30,7 +30,7 @@ $(document).ready(function () {
             contentType: "application/x-www-form-urlencoded",
             dataType: "json",
             success: function (data) {
-                if (data.Success) {
+                if (data.success) {
                     window.location.href = data.RedirectUrl;
                 } else {
                     // Handle success but not redirection here

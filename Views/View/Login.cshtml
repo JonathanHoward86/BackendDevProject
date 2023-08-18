@@ -26,7 +26,7 @@
         $('form').submit(function (e) {
             e.preventDefault();
             $.post("/api/Account/Login", $(this).serialize(), function (data) {
-                if (data.Success) {
+                if (data.success) {
                     window.location.href = data.RedirectUrl;
                 } else {
                     // Handle error here, e.g., show an error message.
