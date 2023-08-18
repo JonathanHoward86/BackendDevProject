@@ -24027,51 +24027,6 @@
   "RootNamespace": "MyEcommerceBackend",
   "Documents": [
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ChangePassword.cshtml",
-      "TargetPath": "Views\\ChangePassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ConfirmEmail.cshtml",
-      "TargetPath": "Views\\ConfirmEmail.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ExternalLogin.cshtml",
-      "TargetPath": "Views\\ExternalLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ExternalLoginCallback.cshtml",
-      "TargetPath": "Views\\ExternalLoginCallback.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ForgotPassword.cshtml",
-      "TargetPath": "Views\\ForgotPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Logout.cshtml",
-      "TargetPath": "Views\\Logout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ManageTwoFactor.cshtml",
-      "TargetPath": "Views\\ManageTwoFactor.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Profile.cshtml",
-      "TargetPath": "Views\\Profile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\ResetPassword.cshtml",
-      "TargetPath": "Views\\ResetPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsernameView.cshtml",
       "TargetPath": "Views\\View\\ForgotUsernameView.cshtml",
       "FileKind": "mvc"
@@ -24102,8 +24057,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\_Layout.cshtml",
-      "TargetPath": "Views\\View\\_Layout.cshtml",
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ]

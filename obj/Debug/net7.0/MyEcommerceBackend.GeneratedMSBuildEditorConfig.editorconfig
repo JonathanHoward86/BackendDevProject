@@ -16,40 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\Coding\BackendDevProject\MyEcommerceBackend
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ChangePassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ConfirmEmail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlybUVtYWlsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ExternalLogin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXh0ZXJuYWxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ExternalLoginCallback.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXh0ZXJuYWxMb2dpbkNhbGxiYWNrLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ForgotPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZ290UGFzc3dvcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/Logout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nb3V0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ManageTwoFactor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlVHdvRmFjdG9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/Profile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/ResetPassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXRQYXNzd29yZC5jc2h0bWw=
+[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/ForgotUsernameView.cshtml]
@@ -76,6 +44,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xfTGF5b3V0LmNzaHRtbA==
+[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
