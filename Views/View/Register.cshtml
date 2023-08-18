@@ -1,39 +1,15 @@
-<!-- Register.cshtml -->
 @{
     ViewData["Title"] = "Register";
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<form method="post" action="/api/Account/Register">
+<form method="post" action="/Account/Register">
     <label for="Email">Email:</label>
     <input type="text" id="Email" name="Email" required autocomplete="username" />
-
     <label for="Password">Password:</label>
     <input type="password" id="Password" name="Password" required autocomplete="new-password" />
-
     <label for="ConfirmPassword">ConfirmPassword:</label>
     <input type="password" id="ConfirmPassword" name="ConfirmPassword" required autocomplete="new-password" />
-
     <button type="submit">Register</button>
 </form>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-$(document).ready(function () {
-    $('form').submit(function (e) {
-        e.preventDefault();
-        $.post("/api/Account/Register", $(this).serialize(), function (data) {
-            console.log(data);
-            if (data.success) {
-                window.location.href = data.RedirectUrl;
-            } else {
-                // Handle success but not redirection here
-            }
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            // Handle error here, e.g., show an error message
-            console.error(textStatus, errorThrown);
-        });
-    });
-});
-</script>

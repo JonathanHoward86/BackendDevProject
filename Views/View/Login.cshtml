@@ -1,10 +1,9 @@
-<!-- Login.cshtml -->
 @{
     ViewData["Title"] = "Login";
 }
 <h2>@ViewData["Title"]</h2>
-<form method="post" action="/api/Account/Login">
-<div class="form-group">
+<form method="post" action="/Account/Login">
+    <div class="form-group">
         <label for="Email">Email</label>
         <input type="text" class="form-control" id="Email" name="Email" required autocomplete="username">
     </div>
@@ -19,19 +18,3 @@
         <a href="@Url.Action("Register", "View")">Register</a>
     </div>
 </form>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('form').submit(function (e) {
-            e.preventDefault();
-            $.post("/api/Account/Login", $(this).serialize(), function (data) {
-                if (data.success) {
-                    window.location.href = data.RedirectUrl;
-                } else {
-                    // Handle error here, e.g., show an error message.
-                }
-            });
-        });
-    });
-</script>
