@@ -56,4 +56,14 @@ public class ViewController : Controller // Controller for handling user-facing 
     {
         return View(model); // Returns the ForgotUsername view along with the model data.
     }
+
+    public IActionResult ResetPasswordEmailSent()
+    {
+        return View(); // Returns the ResetPasswordEmailSent view.
+    }
+
+    public IActionResult ForgotUsernameEmailSent()
+    {
+        return View(); // Returns the ResetUsernameEmailSent view.
+    }
 }

@@ -100,6 +100,33 @@ namespace MyEcommerceBackend.Controllers
             return View(model);
         }
 
+        [HttpPost("ForgotUsername")]
+        public async Task<IActionResult> ForgotUsername(ForgotUsernameModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Email == null)
+                {
+                    ModelState.AddModelError("", "Email must not be null");
+                    return View(model);
+                }
+
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user != null)
+                {
+                    var username = user.UserName;
+                    var emailBody = $"Your username is: {username}";
+                    SendEmail(model.Email, "Retrieve Username", emailBody);
+                    return RedirectToAction("UsernameEmailSent", "View");
+                }
+
+                ModelState.AddModelError("", "Email not found");
+            }
+
+            return View(model);
+        }
+
+
         private void SendEmail(string email, string subject, string body)
         {
             string smtpEmail = _configuration["SmtpEmail"] ?? throw new InvalidOperationException("SmtpEmail must be configured");
