@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyEcommerceBackend.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace MyEcommerceBackend.Controllers
 {
@@ -9,11 +11,13 @@ namespace MyEcommerceBackend.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly IConfiguration _configuration;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
         }
 
         [HttpPost("Register")]
@@ -67,6 +71,62 @@ namespace MyEcommerceBackend.Controllers
                 ModelState.AddModelError("", "Email and Password must not be null");
             }
             return View(model);
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.Email == null) // Check if Email is null
+                {
+                    ModelState.AddModelError("", "Email must not be null");
+                    return View(model);
+                }
+
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user != null)
+                {
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                    var resetUrl = Url.Action("ResetPasswordConfirm", "Account", new { token, email = model.Email }, Request.Scheme);
+                    var emailBody = $"Please reset your password by clicking <a href='{resetUrl}'>here</a>.";
+                    SendEmail(model.Email, "Reset Password", emailBody);
+                    return RedirectToAction("ResetPasswordEmailSent", "View");
+                }
+
+                ModelState.AddModelError("", "Email not found");
+            }
+
+            return View(model);
+        }
+
+        private void SendEmail(string email, string subject, string body)
+        {
+            string smtpEmail = _configuration["SmtpEmail"] ?? throw new InvalidOperationException("SmtpEmail must be configured");
+            string smtpPassword = _configuration["SmtpPassword"] ?? throw new InvalidOperationException("SmtpPassword must be configured");
+
+            if (string.IsNullOrEmpty(smtpEmail) || string.IsNullOrEmpty(smtpPassword))
+            {
+                // Handle error or log an issue
+                return;
+            }
+
+            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+            {
+                client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(smtpEmail, smtpPassword);
+
+                using (MailMessage message = new MailMessage())
+                {
+                    message.From = new MailAddress(smtpEmail);
+                    message.To.Add(email);
+                    message.Subject = subject;
+                    message.Body = body;
+
+                    client.Send(message);
+                }
+            }
         }
     }
 }
