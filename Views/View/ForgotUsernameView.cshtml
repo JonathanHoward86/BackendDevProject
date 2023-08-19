@@ -1,13 +1,16 @@
-<!-- ForgotUsernameView.cshtml -->
-@model MyEcommerceBackend.Models.ForgotUsernameModel
+@{
+    ViewData["Title"] = "Please enter your Email and click Retrieve Username to Proceed.";
+}
 
-<h2>Forgot Username</h2>
+<h2>@ViewData["Title"]</h2>
 
 <form method="post" asp-action="ForgotUsername">
-    <div class="form-group">
-        <label for="Email">Email Address:</label>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="email-label">Email Address:</span>
+        </div>
         <input type="email" id="Email" name="Email" class="form-control" />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Retrieve Username</button>
+    <button type="submit" class="btn btn-primary mb-3">Retrieve Username</button>
 </form>
