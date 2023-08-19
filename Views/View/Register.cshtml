@@ -1,15 +1,27 @@
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Please enter your Email and Password for Registration.";
 }
 
 <h2>@ViewData["Title"]</h2>
 
 <form method="post" action="/Account/Register">
-    <label for="Email">Email:</label>
-    <input type="text" id="Email" name="Email" required autocomplete="username" />
-    <label for="Password">Password:</label>
-    <input type="password" id="Password" name="Password" required autocomplete="new-password" />
-    <label for="ConfirmPassword">ConfirmPassword:</label>
-    <input type="password" id="ConfirmPassword" name="ConfirmPassword" required autocomplete="new-password" />
-    <button type="submit">Register</button>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="email-label">Email:</span>
+        </div>
+        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="email-label" required autocomplete="username">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="password-label">Password:</span>
+        </div>
+        <input type="password" class="form-control" id="Password" name="Password" aria-describedby="password-label" required autocomplete="new-password">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="confirm-password-label">Confirm Password:</span>
+        </div>
+        <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" aria-describedby="confirm-password-label" required autocomplete="new-password">
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">Register</button> <!-- Added the button styling and margin-bottom here -->
 </form>
