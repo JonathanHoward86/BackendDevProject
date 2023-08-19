@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Forgot Username Email Sent";
+}
+
+<form method="post" action="/Account/ForgotUsername">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="Email" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Retrieve Username</button>
+</form>

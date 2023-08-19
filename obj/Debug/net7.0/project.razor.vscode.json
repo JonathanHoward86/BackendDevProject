@@ -24065,6 +24065,16 @@
       "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsername.cshtml",
       "TargetPath": "Views\\View\\ForgotUsername.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordEmailSent.cshtml",
+      "TargetPath": "Views\\View\\ResetPasswordEmailSent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsernameEmailSent.cshtml",
+      "TargetPath": "Views\\View\\ForgotUsernameEmailSent.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }
