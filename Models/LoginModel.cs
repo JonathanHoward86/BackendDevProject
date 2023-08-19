@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-
 namespace MyEcommerceBackend.Models
 {
     public class LoginModel // Model for user login.

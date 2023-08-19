@@ -24032,11 +24032,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsernameView.cshtml",
-      "TargetPath": "Views\\View\\ForgotUsernameView.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\Login.cshtml",
       "TargetPath": "Views\\View\\Login.cshtml",
       "FileKind": "mvc"
@@ -24057,13 +24052,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordView.cshtml",
-      "TargetPath": "Views\\View\\ResetPasswordView.cshtml",
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPassword.cshtml",
+      "TargetPath": "Views\\View\\ResetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsername.cshtml",
+      "TargetPath": "Views\\View\\ForgotUsername.cshtml",
       "FileKind": "mvc"
     }
   ]

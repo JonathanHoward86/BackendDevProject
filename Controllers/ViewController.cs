@@ -35,6 +35,16 @@ public class ViewController : Controller // Controller for handling user-facing 
         return View(); // Returns the LoginSuccess view.
     }
 
+    public IActionResult ResetPassword()
+    {
+        return View(); // Returns the Register view.
+    }
+
+    public IActionResult ForgotUsername()
+    {
+        return View(); // Returns the Register view.
+    }
+
     [HttpPost]
     public IActionResult ResetPassword(ResetPasswordModel model)
     {
