@@ -1,3 +1,4 @@
+<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
 @{
     ViewData["Title"] = "Login";
 }
@@ -11,7 +12,7 @@
         <label for="Password">Password</label>
         <input type="password" class="form-control" id="Password" name="Password" required autocomplete="current-password">
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-Primary">Login</button>
     <div class="links">
         <a href="@Url.Action("ResetPasswordView", "View")">Reset Password?</a>
         <a href="@Url.Action("ForgotUsernameView", "View")">Forgot Username?</a>
