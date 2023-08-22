@@ -37,12 +37,12 @@ public class ViewController : Controller // Controller for handling user-facing 
 
     public IActionResult ResetPassword()
     {
-        return View(); // Returns the Register view.
+        return View(); // Returns the ResetPassword view.
     }
 
     public IActionResult ForgotUsername()
     {
-        return View(); // Returns the Register view.
+        return View(); // Returns the ForgotUsername view.
     }
 
     [HttpPost]
@@ -64,6 +64,6 @@ public class ViewController : Controller // Controller for handling user-facing 
 
     public IActionResult ForgotUsernameEmailSent()
     {
-        return View(); // Returns the ResetUsernameEmailSent view.
+        return View(); // Returns the ForgotUsernameEmailSent view.
     }
 }
