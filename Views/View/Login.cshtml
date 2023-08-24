@@ -4,7 +4,7 @@
     ViewData["Title"] = "Welcome, please login to continue.";
 }
 <h2>@ViewData["Title"]</h2>
-<form method="post" action="/Account/Login">
+<form method="post" asp-controller="Account" asp-action="Login">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="email-label">Email</span>

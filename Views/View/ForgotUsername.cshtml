@@ -4,7 +4,7 @@
     ViewData["Title"] = "Please enter your Email and click Retrieve Username to Proceed.";
 }
 <h2>@ViewData["Title"]</h2>
-<form method="post" asp-action="ForgotUsername">
+<form method="post" asp-controller="Account" asp-action="ForgotUsername">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="email-label">Email Address:</span>
