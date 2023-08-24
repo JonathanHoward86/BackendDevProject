@@ -129,8 +129,10 @@ namespace MyEcommerceBackend.Controllers
         private async Task SendEmail(string email, string subject, string body)
         {
             string apiKey = Environment.GetEnvironmentVariable("SmtpAPI") ?? throw new InvalidOperationException("SmtpAPI must be configured");
+            string fromEmail = Environment.GetEnvironmentVariable("SmtpFromEmail") ?? throw new InvalidOperationException("SmtpFromEmail must be configured");
+            string fromName = Environment.GetEnvironmentVariable("SmtpFromName") ?? throw new InvalidOperationException("SmtpFromName must be configured");
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("your-email@example.com", "Your Name");
+            var from = new EmailAddress(fromEmail, fromName);
             var to = new EmailAddress(email);
             var msg = MailHelper.CreateSingleEmail(from, to, subject, body, body);
             var response = await client.SendEmailAsync(msg);
