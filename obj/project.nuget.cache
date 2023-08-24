@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UA0oOgG3nDLiYfGNNm3iaGwJwUAvVen8cHnhZjJkRIUsBUCS3Fp8f85c0aKvu0sYbM6RIEHddXbBIbdxWx1h6g==",
+  "dgSpecHash": "aTG/T5A+vQs7PrEMDgLUtd28Qiwo3heI+QNCCMV3jCqAxAK+vcv/x+1e4K/9xeL4Bw6pmlsAGfOpts4QLqtyhg==",
   "success": true,
   "projectFilePath": "C:\\Coding\\BackendDevProject\\MyEcommerceBackend\\MyEcommerceBackend.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,9 @@
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\sendgrid\\9.28.1\\sendgrid.9.28.1.nupkg.sha512",
+    "C:\\Users\\jonat\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

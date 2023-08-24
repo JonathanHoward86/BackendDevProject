@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyEcommerceBackend.Models;
-using System.Net;
-using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace MyEcommerceBackend.Controllers
 {
@@ -90,7 +90,7 @@ namespace MyEcommerceBackend.Controllers
                     var token = await _userManager.GeneratePasswordResetTokenAsync(user);
                     var resetUrl = Url.Action("ResetPasswordConfirm", "Account", new { token, email = model.Email }, Request.Scheme);
                     var emailBody = $"Please reset your password by clicking <a href='{resetUrl}'>here</a>.";
-                    SendEmail(model.Email, "Reset Password", emailBody);
+                    await SendEmail(model.Email, "Reset Password", emailBody);
                     return RedirectToAction("ResetPasswordEmailSent", "View");
                 }
 
@@ -116,7 +116,7 @@ namespace MyEcommerceBackend.Controllers
                 {
                     var username = user.UserName;
                     var emailBody = $"Your username is: {username}";
-                    SendEmail(model.Email, "Retrieve Username", emailBody);
+                    await SendEmail(model.Email, "Retrieve Username", emailBody);
                     return RedirectToAction("UsernameEmailSent", "View");
                 }
 
@@ -126,28 +126,15 @@ namespace MyEcommerceBackend.Controllers
             return View(model);
         }
 
-
-        private void SendEmail(string email, string subject, string body)
+        private async Task SendEmail(string email, string subject, string body)
         {
-            string smtpEmail = Environment.GetEnvironmentVariable("SmtpEmail") ?? throw new InvalidOperationException("SmtpEmail must be configured");
-            string smtpPassword = Environment.GetEnvironmentVariable("SmtpPassword") ?? throw new InvalidOperationException("SmtpPassword must be configured");
-
-            using (var client = new SmtpClient("smtp.gmail.com", 587))
-            {
-                client.EnableSsl = true;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential(smtpEmail, smtpPassword);
-
-                using (var message = new MailMessage())
-                {
-                    message.From = new MailAddress(smtpEmail);
-                    message.To.Add(email);
-                    message.Subject = subject;
-                    message.Body = body;
-                    client.Send(message);
-                }
-            }
+            string apiKey = Environment.GetEnvironmentVariable("SmtpAPI") ?? throw new InvalidOperationException("SmtpAPI must be configured");
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("your-email@example.com", "Your Name");
+            var to = new EmailAddress(email);
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, body, body);
+            var response = await client.SendEmailAsync(msg);
         }
+
     }
 }
-
