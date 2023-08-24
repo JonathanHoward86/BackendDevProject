@@ -129,8 +129,8 @@ namespace MyEcommerceBackend.Controllers
 
         private void SendEmail(string email, string subject, string body)
         {
-            string smtpEmail = _configuration["SmtpEmail"] ?? throw new InvalidOperationException("SmtpEmail must be configured");
-            string smtpPassword = _configuration["SmtpPassword"] ?? throw new InvalidOperationException("SmtpPassword must be configured");
+            string smtpEmail = Environment.GetEnvironmentVariable("SmtpEmail") ?? throw new InvalidOperationException("SmtpEmail must be configured");
+            string smtpPassword = Environment.GetEnvironmentVariable("SmtpPassword") ?? throw new InvalidOperationException("SmtpPassword must be configured");
 
             if (string.IsNullOrEmpty(smtpEmail) || string.IsNullOrEmpty(smtpPassword))
             {
