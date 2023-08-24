@@ -133,7 +133,7 @@ namespace MyEcommerceBackend.Controllers
             string fromName = Environment.GetEnvironmentVariable("SmtpFromName") ?? throw new InvalidOperationException("SmtpFromName must be configured");
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(fromEmail, fromName);
-            var to = new EmailAddress(email);
+            var to = new EmailAddress(email, "Faithful User");
             var msg = MailHelper.CreateSingleEmail(from, to, subject, body, body);
             var response = await client.SendEmailAsync(msg);
         }
