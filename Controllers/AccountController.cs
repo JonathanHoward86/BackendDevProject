@@ -129,30 +129,41 @@ namespace MyEcommerceBackend.Controllers
 
         private void SendEmail(string email, string subject, string body)
         {
-            string smtpEmail = Environment.GetEnvironmentVariable("SmtpEmail") ?? throw new InvalidOperationException("SmtpEmail must be configured");
-            string smtpPassword = Environment.GetEnvironmentVariable("SmtpPassword") ?? throw new InvalidOperationException("SmtpPassword must be configured");
-
-            if (string.IsNullOrEmpty(smtpEmail) || string.IsNullOrEmpty(smtpPassword))
+            try
             {
-                // Handle error or log an issue
-                return;
-            }
+                string smtpEmail = Environment.GetEnvironmentVariable("SmtpEmail") ?? throw new InvalidOperationException("SmtpEmail must be configured");
+                string smtpPassword = Environment.GetEnvironmentVariable("SmtpPassword") ?? throw new InvalidOperationException("SmtpPassword must be configured");
 
-            using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-            {
-                client.EnableSsl = true;
-                client.UseDefaultCredentials = false;
-                client.Credentials = new NetworkCredential(smtpEmail, smtpPassword);
+                Console.WriteLine($"SMTP Email: {smtpEmail}"); // Debugging purposes only
+                Console.WriteLine($"SMTP Password: {smtpPassword}"); // Debugging purposes only
 
-                using (MailMessage message = new MailMessage())
+                if (string.IsNullOrEmpty(smtpEmail) || string.IsNullOrEmpty(smtpPassword))
                 {
-                    message.From = new MailAddress(smtpEmail);
-                    message.To.Add(email);
-                    message.Subject = subject;
-                    message.Body = body;
-
-                    client.Send(message);
+                    // Handle error or log an issue
+                    return;
                 }
+
+                using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(smtpEmail, smtpPassword);
+
+                    using (MailMessage message = new MailMessage())
+                    {
+                        message.From = new MailAddress(smtpEmail);
+                        message.To.Add(email);
+                        message.Subject = subject;
+                        message.Body = body;
+
+                        client.Send(message);
+                    }
+                    Console.WriteLine("Email sent successfully."); // Log success
+                }
+            }
+    catch (Exception ex)
+            {
+                Console.WriteLine($"Error sending email: {ex.Message}"); // Log any exceptions
             }
         }
     }
