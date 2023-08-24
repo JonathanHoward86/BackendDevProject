@@ -138,5 +138,40 @@ namespace MyEcommerceBackend.Controllers
             var response = await client.SendEmailAsync(msg);
         }
 
+        // GET action to show the reset password form
+        [HttpGet]
+        public IActionResult ResetPasswordConfirm(string token, string email)
+        {
+            var model = new ResetPasswordConfirmModel { Token = token, Email = email };
+            return View(model);
+        }
+
+        // POST action to handle the form submission
+        [HttpPost]
+        public async Task<IActionResult> ResetPasswordConfirm(ResetPasswordConfirmModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user != null)
+                {
+                    var result = await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+                    if (result.Succeeded)
+                    {
+                        // Password reset was successful
+                        return RedirectToAction("ResetPasswordSuccess", "View");
+                    }
+                    else
+                    {
+                        // Handle errors
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+                    }
+                }
+            }
+            return View(model);
+        }
     }
 }

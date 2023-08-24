@@ -24075,6 +24075,16 @@
       "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordConfirm.cshtml",
+      "TargetPath": "Views\\View\\ResetPasswordConfirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordSuccess.cshtml",
+      "TargetPath": "Views\\View\\ResetPasswordSuccess.cshtml",
+      "FileKind": "mvc"
     }
   ]
 }

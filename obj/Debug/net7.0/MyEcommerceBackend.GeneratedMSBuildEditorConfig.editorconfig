@@ -48,8 +48,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/ResetPasswordConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkQ29uZmlybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/ResetPasswordEmailSent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkRW1haWxTZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Coding/BackendDevProject/MyEcommerceBackend/Views/View/ResetPasswordSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlld1xSZXNldFBhc3N3b3JkU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Coding/BackendDevProject/MyEcommerceBackend/Views/_ViewStart.cshtml]

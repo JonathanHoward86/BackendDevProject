@@ -1,21 +1,21 @@
 <!DOCTYPE html>
+<html lang="en">
 @{
     ViewData["Title"] = "Welcome, please login to continue.";
 }
 
-<h2>@ViewData["Title"]</h2>
 <form method="post" action="/Account/Login">
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="email-label">Email</span>
         </div>
-        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="email-label" required autocomplete="username">
+        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="email-label" required autocomplete="Email">
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="password-label">Password</span>
         </div>
-        <input type="password" class="form-control" id="Password" name="Password" aria-describedby="password-label" required autocomplete="current-password">
+        <input type="password" class="form-control" id="Password" name="Password" aria-describedby="password-label" required autocomplete="Password">
     </div>
     <button type="submit" class="btn btn-success mb-3">Login</button>
     <div class="links">
@@ -24,3 +24,4 @@
         <a href="@Url.Action("Register", "View")" class="btn btn-info">Register</a>
     </div>
 </form>
+</html>
