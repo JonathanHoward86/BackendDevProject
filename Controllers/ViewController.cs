@@ -67,8 +67,8 @@ public class ViewController : Controller // Controller for handling user-facing 
         return View(); // Returns the ForgotUsernameEmailSent view.
     }
 
-    public IActionResult ResetPasswordSuccess()
+    public IActionResult ResetPasswordConfirm(ResetPasswordConfirmModel model)
     {
-        return View();
+        return View(model); // Returns the ResetPasswordConfirm view.
     }
 }
