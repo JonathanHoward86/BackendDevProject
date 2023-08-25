@@ -33,7 +33,7 @@ namespace MyEcommerceBackend.Controllers
                     if (result.Succeeded)
                     {
                         await _signInManager.SignInAsync(user, false);
-                        return RedirectToAction("RegisterSuccess", "View");
+                        return RedirectToAction("RegisterSuccess");
                     }
 
                     foreach (var error in result.Errors)
@@ -74,7 +74,7 @@ namespace MyEcommerceBackend.Controllers
 
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("LoginSuccess", "View");
+                        return RedirectToAction("LoginSuccess");
                     }
                 }
                 ModelState.AddModelError("", "Invalid login attempt");
@@ -117,7 +117,7 @@ namespace MyEcommerceBackend.Controllers
                     var resetUrl = Url.Action("ResetPasswordConfirm", "Account", new { token, email = model.Email }, Request.Scheme);
                     var emailBody = $"Please reset your password by clicking <a href='{resetUrl}'>here</a>.";
                     await SendEmail(model.Email, "Reset Password", emailBody);
-                    return RedirectToAction("ResetPasswordEmailSent", "View");
+                    return RedirectToAction("ResetPasswordEmailSent");
                 }
 
                 ModelState.AddModelError("", "Email not found");
@@ -167,7 +167,7 @@ namespace MyEcommerceBackend.Controllers
                     var username = user.UserName;
                     var emailBody = $"Your username is: {username}";
                     await SendEmail(model.Email, "Retrieve Username", emailBody);
-                    return RedirectToAction("ForgotUsernameEmailSent", "View");
+                    return RedirectToAction("ForgotUsernameEmailSent");
                 }
 
                 ModelState.AddModelError("", "Email not found");
@@ -220,7 +220,7 @@ namespace MyEcommerceBackend.Controllers
                     if (result.Succeeded)
                     {
                         // Password reset was successful
-                        return RedirectToAction("ResetPasswordSuccess", "View");
+                        return RedirectToAction("ResetPasswordSuccess");
                     }
                     else
                     {
