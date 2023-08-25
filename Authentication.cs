@@ -89,7 +89,7 @@ namespace MyEcommerceBackend
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=View}/{action=Login}/{id?}"); // Defines the default route
+                    pattern: "{controller=Account}/{action=Login}/{id?}"); // Defines the default route
                 endpoints.MapControllers();
             });
         }
