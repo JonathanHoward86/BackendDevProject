@@ -117,7 +117,7 @@ namespace MyEcommerceBackend.Controllers
                     var username = user.UserName;
                     var emailBody = $"Your username is: {username}";
                     await SendEmail(model.Email, "Retrieve Username", emailBody);
-                    return RedirectToAction("UsernameEmailSent", "View");
+                    return RedirectToAction("ForgotUsernameEmailSent", "View");
                 }
 
                 ModelState.AddModelError("", "Email not found");

@@ -71,4 +71,9 @@ public class ViewController : Controller // Controller for handling user-facing 
     {
         return View(model); // Returns the ResetPasswordConfirm view.
     }
+
+    public IActionResult ResetPasswordSuccess()
+    {
+        return View(); // Returns the ResetPasswordSuccess view.
+    }
 }
