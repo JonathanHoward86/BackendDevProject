@@ -70,7 +70,7 @@ namespace MyEcommerceBackend.Controllers
             {
                 ModelState.AddModelError("", "Email and Password must not be null");
             }
-            return View(model);
+            return View("Login", model);
         }
 
         [HttpPost("ResetPassword")]
@@ -97,7 +97,7 @@ namespace MyEcommerceBackend.Controllers
                 ModelState.AddModelError("", "Email not found");
             }
 
-            return View(model);
+            return View("ResetPassword", model);
         }
 
         [HttpPost("ForgotUsername")]
@@ -123,7 +123,7 @@ namespace MyEcommerceBackend.Controllers
                 ModelState.AddModelError("", "Email not found");
             }
 
-            return View(model);
+            return View("ForgotUsername", model);
         }
 
         private async Task SendEmail(string email, string subject, string body)
@@ -143,7 +143,7 @@ namespace MyEcommerceBackend.Controllers
         public IActionResult ResetPasswordConfirm(string token, string email)
         {
             var model = new ResetPasswordConfirmModel { Token = token, Email = email };
-            return View(model);
+            return View("ResetPasswordConfirm", model);
         }
 
         // POST action to handle the form submission
@@ -171,7 +171,7 @@ namespace MyEcommerceBackend.Controllers
                     }
                 }
             }
-            return View(model);
+            return View("ResetPasswordConfirm", model);
         }
     }
 }
