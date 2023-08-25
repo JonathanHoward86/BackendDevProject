@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Please enter your Email and Password then click Register.";
 }
+<div asp-validation-summary="All" class="text-danger"></div>
 <h2>@ViewData["Title"]</h2>
 <form method="post" asp-controller="Account" asp-action="Register">
     <div class="input-group mb-3">
