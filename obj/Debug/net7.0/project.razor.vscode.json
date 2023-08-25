@@ -24057,33 +24057,33 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ForgotUsernameEmailSent.cshtml",
-      "TargetPath": "Views\\View\\ForgotUsernameEmailSent.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\LoginSuccess.cshtml",
-      "TargetPath": "Views\\View\\LoginSuccess.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\RegisterSuccess.cshtml",
-      "TargetPath": "Views\\View\\RegisterSuccess.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordEmailSent.cshtml",
-      "TargetPath": "Views\\View\\ResetPasswordEmailSent.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\View\\ResetPasswordSuccess.cshtml",
-      "TargetPath": "Views\\View\\ResetPasswordSuccess.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Account\\ForgotUsernameEmailSent.cshtml",
+      "TargetPath": "Views\\Account\\ForgotUsernameEmailSent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Account\\LoginSuccess.cshtml",
+      "TargetPath": "Views\\Account\\LoginSuccess.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Account\\RegisterSuccess.cshtml",
+      "TargetPath": "Views\\Account\\RegisterSuccess.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Account\\ResetPasswordEmailSent.cshtml",
+      "TargetPath": "Views\\Account\\ResetPasswordEmailSent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Coding\\BackendDevProject\\MyEcommerceBackend\\Views\\Account\\ResetPasswordSuccess.cshtml",
+      "TargetPath": "Views\\Account\\ResetPasswordSuccess.cshtml",
       "FileKind": "mvc"
     }
   ]
