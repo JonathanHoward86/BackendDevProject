@@ -46,7 +46,7 @@ namespace MyEcommerceBackend.Controllers
                     ModelState.AddModelError("", "Email and Password must not be null");
                 }
             }
-            return View(model);
+            return View("Register", model);
         }
 
         [HttpPost("Login")]
